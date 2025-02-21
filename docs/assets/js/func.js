@@ -16,3 +16,13 @@ window.onscroll=function() {
         left.style.position = "relative";
     }
 }
+
+(function() {
+    document.getElementById('formsearch').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var query = document.getElementById('q').value;
+        var searchQuery = 'site:www.youth168.com ' + query;
+        var searchUrl = 'https://duckduckgo.com/?t=h&ia=web&q=' + encodeURIComponent(searchQuery);
+        window.location.href = searchUrl;
+    });
+})();
